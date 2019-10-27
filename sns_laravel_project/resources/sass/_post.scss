@@ -28,6 +28,14 @@
             display: flex;
             color: gray;
 
+            .footer-icon {
+                padding-right: 40px;
+
+                i {
+                    cursor: pointer;
+                }
+            }
+
             .footer-time {
                 margin-left: auto;
             }
