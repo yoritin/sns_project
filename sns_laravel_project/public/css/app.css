@@ -11100,3 +11100,43 @@ a.text-dark:focus {
   }
 }
 
+.post {
+  display: -webkit-box;
+  display: flex;
+  list-style: none;
+  border: solid 1px #dfdfdf;
+  border-radius: 5px;
+}
+
+.post .user-icon {
+  padding: 20px 0 0 20px;
+}
+
+.post .user-icon .user-image {
+  border-radius: 50%;
+}
+
+.post .post-content {
+  -webkit-box-flex: 1;
+          flex: 1;
+  padding: 20px 10px 10px 20px;
+}
+
+.post .post-content .post-header {
+  font-size: 1.6rem;
+}
+
+.post .post-content .post-body {
+  padding: 10px 0;
+}
+
+.post .post-content .post-footer {
+  display: -webkit-box;
+  display: flex;
+  color: gray;
+}
+
+.post .post-content .post-footer .footer-time {
+  margin-left: auto;
+}
+

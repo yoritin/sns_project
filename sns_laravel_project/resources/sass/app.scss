@@ -1,3 +1,4 @@
+// default settings
 // Fonts
 @import url('https://fonts.googleapis.com/css?family=Nunito');
 
@@ -6,3 +7,7 @@
 
 // Bootstrap
 @import '~bootstrap/scss/bootstrap';
+
+
+// add settings
+@import 'post';
