@@ -15,8 +15,11 @@ Auth::routes();
 
 // posts
 Route::get('/', 'PostsController@index');
-Route::get('/posts/create', 'PostsController@create');
-Route::post('/', 'PostsController@store');
+
+Route::group(['middleware' => 'auth'], function() {
+    Route::get('/posts/create', 'PostsController@create');
+    Route::post('/', 'PostsController@store');
+});
 
 // users
 Route::resource('users', 'UsersController');
