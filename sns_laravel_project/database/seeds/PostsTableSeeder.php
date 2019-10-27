@@ -12,11 +12,6 @@ class PostsTableSeeder extends Seeder
      */
     public function run()
     {
-        DB::table('posts')->insert([
-            'user_id' => '1',
-            'content' => 'hello',
-            'created_at' => Carbon::now(),
-            'updated_at' => Carbon::now(),
-        ]);
+        factory(App\Post::class, 20)->create();
     }
 }

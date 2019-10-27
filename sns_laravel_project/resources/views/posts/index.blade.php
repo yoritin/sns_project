@@ -16,7 +16,7 @@
                         <div class="post-footer">
                             <div class="footer-icon"><i class="far fa-heart"></i></div>
                             <div class="footer-icon"><i class="far fa-comment"></i></div>
-                            <div class="footer-time">2019/04/06</div>
+                            <div class="footer-time">{{ $post->updated_at }}</div>
                         </div>
                     </div>
                 </li>
