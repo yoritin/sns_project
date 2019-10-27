@@ -12,7 +12,7 @@
                     </div>
                     <div class="post-content">
                         <div class="post-header">{{ $post->user->name }}</div>
-                        <div class="post-body">{{ $post->content }}</div>
+                        <div class="post-body">{!! nl2br(e($post->content)) !!}</div>
                         <div class="post-footer">
                             <div class="footer-icon"><i class="far fa-heart"></i></div>
                             <div class="footer-icon"><i class="far fa-comment"></i></div>
