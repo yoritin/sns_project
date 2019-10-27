@@ -5,6 +5,12 @@
     <div class="row">
         <div class="col-md-8">
             <ul>
+
+                <!-- if (Auth::id と {user_id} が一致したら)))) -->
+                    <!-- フォローしたユーザーのpost -->
+                <!-- else -->
+                    <!-- それぞれのユーザーのユーザーのpost -->
+
                 @foreach($user->posts as $post)
                 <li class="post mb-3">
                     <div class="user-icon">
