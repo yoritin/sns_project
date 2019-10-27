@@ -12,4 +12,16 @@ class PostsController extends Controller
         $posts = Post::latest()->get();
         return view('posts.index')->with('posts', $posts);
     }
+
+    public function create() {
+        return view('posts.create');
+    }
+
+    public function store(Request $request) {
+        $post = New Post();
+        $post->user_id = Auth::id();
+        $post->content = $request->content;
+        $post->save();
+        return redirect('/');
+    }
 }

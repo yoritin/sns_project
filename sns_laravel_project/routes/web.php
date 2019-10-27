@@ -13,8 +13,13 @@
 
 Auth::routes();
 
+// posts
 Route::get('/', 'PostsController@index');
+Route::get('/posts/create', 'PostsController@create');
+Route::post('/', 'PostsController@store');
 
-Route::get('/home', 'HomeController@index')->name('home');
-
+// users
 Route::resource('users', 'UsersController');
+
+// default
+Route::get('/home', 'HomeController@index')->name('home');
