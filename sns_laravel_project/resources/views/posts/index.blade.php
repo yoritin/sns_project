@@ -11,7 +11,9 @@
                         <img class="user-image" src="/storage/user_noimage.jpg" alt="noimage" width="40" height="40">
                     </div>
                     <div class="post-content">
-                        <div class="post-header">{{ $post->user->name }}</div>
+                        <div class="post-header">
+                            <a href="{{ action('UsersController@show', $post->user_id) }}">{{ $post->user->name }}</a>
+                        </div>
                         <div class="post-body">{!! nl2br(e($post->content)) !!}</div>
                         <div class="post-footer">
                             <div class="footer-icon"><i class="far fa-heart"></i></div>
