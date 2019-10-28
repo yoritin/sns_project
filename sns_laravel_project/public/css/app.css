@@ -17000,6 +17000,7 @@ readers do not read off random characters that represent icons */
   list-style: none;
   border: solid 1px #dfdfdf;
   border-radius: 5px;
+  background: #fff;
 }
 
 .post .user-icon {
@@ -17040,5 +17041,17 @@ readers do not read off random characters that represent icons */
 
 .post .post-content .post-footer .footer-time {
   margin-left: auto;
+}
+
+.user-container {
+  margin: 0 auto;
+}
+
+.user-container .card-body {
+  padding: 20px 0 10px 0;
+}
+
+.user-container .card-body img {
+  border-radius: 50%;
 }
 

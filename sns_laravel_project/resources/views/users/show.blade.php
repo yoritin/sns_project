@@ -16,6 +16,18 @@
                 @endforeach
             </ul>
         </div>
+        <div class="col-md-4">
+            <div class="card">
+                <div class="user-container">
+                    <div class="card-body ">
+                        <img src="/storage/user_noimage.jpg" alt="user_noimage" width="250" height="250">
+                    </div>
+                    <div class="card-body">{{ $user->name }}</div>
+                    <div class="card-body">comment</div>
+                    <div class="card-body">{{ Auth::id() }}</div>
+                </div>
+            </div>
+        </div>
     </div>
 </div>
 @endsection
