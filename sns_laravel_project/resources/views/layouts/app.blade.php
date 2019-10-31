@@ -59,7 +59,7 @@
                                        onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
                                         {{ __('Logout') }}
-                                    <a class="dropdown-item" href="{{ url('/users') }}">
+                                    <a class="dropdown-item" href="{{ url('/users', Auth::id()) }}">
                                         {{ __('my page') }}
                                     </a>
 

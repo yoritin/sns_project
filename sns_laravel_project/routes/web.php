@@ -23,6 +23,3 @@ Route::group(['middleware' => 'auth'], function() {
 
 // users
 Route::resource('users', 'UsersController');
-
-// default
-Route::get('/home', 'HomeController@index')->name('home');
