@@ -5,12 +5,6 @@
     <div class="row">
         <div class="col-md-8">
             <ul>
-
-                <!-- if (Auth::id と {user_id} が一致したら)))) -->
-                    <!-- フォローしたユーザーのpost -->
-                <!-- else -->
-                    <!-- それぞれのユーザーのユーザーのpost -->
-
                 @foreach($user->posts as $post)
                 @include('layouts.post')
                 @endforeach
@@ -24,7 +18,16 @@
                     </div>
                     <div class="card-body">{{ $user->name }}</div>
                     <div class="card-body">comment</div>
-                    <div class="card-body">{{ Auth::id() }}</div>
+                    {{ Auth::id() }} : {{ $user->id }}
+                    @if (Auth::id() === $user->id)
+                    <form action="" class="text-center mb-3">
+                        <button type="submit" class="user-btn">プロフィール編集</button>
+                    </form>
+                    @else
+                    <form action="" class="text-center mb-3">
+                        <button type="submit" class="user-btn">フォロー ＋</button>
+                    </form>
+                    @endif
                 </div>
             </div>
         </div>

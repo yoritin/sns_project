@@ -8,4 +8,19 @@
             border-radius: 50%;
         }
     }
+
+    .user-btn {
+        padding: 10px 40px;
+        border: 2px solid $black;
+        color: $black;
+        border-radius: 50px;
+        box-sizing: border-box;
+        
+        &:hover {
+            background: $black;
+            color: white;
+            transition-duration: .3s;
+        }
+    }
+
 }
