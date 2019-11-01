@@ -17047,6 +17047,10 @@ readers do not read off random characters that represent icons */
   margin: 0 auto;
 }
 
+.user-container .card-body-name {
+  font-size: 18px;
+}
+
 .user-container .card-body {
   padding: 20px 0 10px 0;
 }
