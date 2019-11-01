@@ -23,3 +23,6 @@ Route::group(['middleware' => 'auth'], function() {
 
 // users
 Route::resource('users', 'UsersController');
+
+// relationship
+Route::post('/relationship', 'RelationshipsController@store');
