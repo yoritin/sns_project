@@ -1,0 +1,46 @@
+.post {
+    display: flex;
+    list-style: none;
+    border: solid 1px #dfdfdf;
+    border-radius: 5px;
+    background: #fff;
+    
+    .user-icon {
+        padding: 20px 0 0 20px;
+
+        .user-image {
+            border-radius: 50%;
+        }
+    }
+
+    .post-content {
+        flex: 1;
+        padding: 20px 10px 10px 20px;
+
+        .post-header {
+            font-size: 1.6rem;
+        }
+
+        .post-body {
+            padding: 10px 0;
+        }
+
+        .post-footer {
+            display: flex;
+            color: gray;
+
+            .footer-icon {
+                padding-right: 40px;
+
+                i {
+                    cursor: pointer;
+                }
+            }
+
+            .footer-time {
+                margin-left: auto;
+            }
+        }
+    }
+}
+

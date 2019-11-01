@@ -65,6 +65,19 @@
                             </div>
                         </div>
                     </form>
+                    <form method="POST" action="{{ route('login') }}">
+                        @csrf
+                        <input value="testuser@example.com" id="email" type="hidden" name="email">
+                        <input value="testuser" id="password" type="hidden" name="password">
+                        <input type="hidden" name="remember" id="remember" {{ old('remember') ? 'checked' : '' }}>
+                        <div class="form-group row mb-0 mt-3">
+                            <div class="col-md-8 offset-md-4">
+                                <button type="submit" class="btn btn-primary">
+                                    {{ __('簡単 Login') }}
+                                </button>
+                            </div>
+                        </div>
+                    </form>
                 </div>
             </div>
         </div>
