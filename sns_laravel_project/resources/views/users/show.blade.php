@@ -23,8 +23,10 @@
                         <button type="submit" class="user-btn">プロフィール編集</button>
                     </form>
                     @else
-                    <form action="" class="text-center mb-3">
+                    <form method="post" action="{{ url('/relationship') }}" class="text-center mb-3">
                         <p>{{ Auth::id() }} : {{ $user->id }}</p>
+                        <input type="hidden" value="{{ Auth::id() }}" name="user_id">
+                        <input type="hidden" value="{{ $user->id }}" name="followed_user_id">
                         <button type="submit" class="user-btn">フォロー ＋</button>
                     </form>
                     @endif
