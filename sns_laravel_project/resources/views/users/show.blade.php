@@ -23,7 +23,8 @@
                         <button type="submit" class="user-btn">プロフィール編集</button>
                     </form>
                     @else
-                    <form action="" class="text-center mb-3">
+                    <form method="post" action="{{ url('/relationship') }}" class="text-center mb-3">
+                        @csrf
                         <p>{{ Auth::id() }} : {{ $user->id }}</p>
                         <button type="submit" class="user-btn">フォロー ＋</button>
                     </form>
