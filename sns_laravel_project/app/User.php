@@ -41,8 +41,8 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
     ];
 
-    public function relationship() {
-        return $this->belongsToMany(self::class, 'relationship', 'user_id', 'followed_user_id')
+    public function relationships() {
+        return $this->belongsToMany(self::class, 'relationships', 'user_id', 'followed_user_id')
             ->using(Relationship::class);
     }
 }
