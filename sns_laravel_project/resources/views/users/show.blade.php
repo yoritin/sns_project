@@ -24,6 +24,7 @@
                     </form>
                     @else
                     <form method="post" action="{{ url('/relationship') }}" class="text-center mb-3">
+                        @csrf
                         <p>{{ Auth::id() }} : {{ $user->id }}</p>
                         <input type="hidden" value="{{ Auth::id() }}" name="user_id">
                         <input type="hidden" value="{{ $user->id }}" name="followed_user_id">
