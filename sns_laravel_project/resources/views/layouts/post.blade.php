@@ -1,4 +1,4 @@
-<li class="post mb-3">
+<div class="post mb-3">
     <div class="user-icon">
         <img class="user-image" src="/storage/user_noimage.jpg" alt="noimage" width="40" height="40">
     </div>
@@ -13,4 +13,4 @@
             <div class="footer-time">{{ $post->updated_at }}</div>
         </div>
     </div>
-</li>
+</div>
