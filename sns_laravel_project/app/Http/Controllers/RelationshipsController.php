@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\relationship;
+use App\user;
 
 class RelationshipsController extends Controller
 {
