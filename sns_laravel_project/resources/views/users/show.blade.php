@@ -18,11 +18,9 @@
                     <p>12</p>
                 </div>
             </div>
-            <ul>
-                @foreach($user->posts as $post)
-                @include('layouts.post')
-                @endforeach
-            </ul>
+            @foreach($user->posts as $post)
+            @include('layouts.post')
+            @endforeach
         </div>
         <div class="col-md-4">
             <div class="card">
