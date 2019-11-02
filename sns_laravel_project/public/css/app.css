@@ -17043,6 +17043,22 @@ readers do not read off random characters that represent icons */
   margin-left: auto;
 }
 
+.user-header {
+  display: -webkit-box;
+  display: flex;
+  border: solid 1px #dfdfdf;
+  border-radius: 5px;
+  background: #fff;
+}
+
+.user-header .user-header-item {
+  padding: 10px 20px;
+}
+
+.user-header .user-header-item p {
+  margin: 0;
+}
+
 .user-container {
   margin: 0 auto;
 }

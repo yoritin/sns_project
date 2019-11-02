@@ -1,0 +1,14 @@
+.user-header {
+    display: flex;
+    border: solid 1px #dfdfdf;
+    border-radius: 5px;
+    background: #fff;
+
+    .user-header-item {
+        padding: 10px 20px;
+
+        p {
+            margin: 0;
+        }
+    }
+}

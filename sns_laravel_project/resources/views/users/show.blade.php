@@ -4,6 +4,20 @@
 <div class="container">
     <div class="row">
         <div class="col-md-8">
+            <div class="user-header mb-3">
+                <div class="user-header-item">
+                    <p>follow</p>
+                    <p>12</p>
+                </div>
+                <div class="user-header-item">
+                    <p>follower</p>
+                    <p>12</p>
+                </div>
+                <div class="user-header-item">
+                    <p>like</p>
+                    <p>12</p>
+                </div>
+            </div>
             <ul>
                 @foreach($user->posts as $post)
                 @include('layouts.post')
