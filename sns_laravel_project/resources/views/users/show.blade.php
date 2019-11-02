@@ -37,11 +37,13 @@
                                 <div class="card-header">follow</div>
                                 <ul>
                                     <!-- Follow -->
-                                    @foreach($user->relationships as $relationship)
+                                    @forelse($user->relationships as $relationship)
                                     <li>
-                                        <div class="card-body">{{ $relationship->pivot->followed_user_id }}</div>
+                                        {{ $relationship->pivot->followed_user_id }}
                                     </li>
-                                    @endforeach
+                                    @empty
+                                    <li>いないよ！</li>
+                                    @endforelse
                                 </ul>
                             </div>
                         </div>
@@ -50,11 +52,13 @@
                                 <div class="card-header">follower</div>
                                 <ul>
                                     <!-- follower -->
-                                    @foreach($user->followed_relationships as $followed_relationship)
+                                    @forelse($user->followed_relationships as $followed_relationship)
                                     <li>
-                                        <div class="card-body">{{ $followed_relationship->pivot->user_id }}</div>
+                                        {{ $followed_relationship->pivot->user_id }}
                                     </li>
-                                    @endforeach
+                                    @empty
+                                    <li>いないよ！</li>
+                                    @endforelse
                                 </ul>
                             </div>
                         </div>

@@ -17074,3 +17074,17 @@ readers do not read off random characters that represent icons */
           transition-duration: 0.3s;
 }
 
+.user-container .card-header {
+  padding: 3px 10px;
+}
+
+.user-container ul {
+  padding: 0;
+  margin: 0;
+}
+
+.user-container ul li {
+  list-style: none;
+  padding: 3px 10px;
+}
+
