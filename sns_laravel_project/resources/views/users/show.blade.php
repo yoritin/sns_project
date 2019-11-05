@@ -47,31 +47,13 @@
                         <div class="col-md-6">
                             <div class="card">
                                 <div class="card-header">follow</div>
-                                <ul>
-                                    <!-- Follow -->
-                                    @forelse($user->relationships as $relationship)
-                                    <li>
-                                        {{ $relationship->pivot->followed_user_id }}
-                                    </li>
-                                    @empty
-                                    <li>いないよ！</li>
-                                    @endforelse
-                                </ul>
+                                <div class="card-count">{{ \App\Relationship::where('user_id', $user->id)->count() }}</div>
                             </div>
                         </div>
                         <div class="col-md-6">
                             <div class="card">
                                 <div class="card-header">follower</div>
-                                <ul>
-                                    <!-- follower -->
-                                    @forelse($user->followed_relationships as $followed_relationship)
-                                    <li>
-                                        {{ $followed_relationship->pivot->user_id }}
-                                    </li>
-                                    @empty
-                                    <li>いないよ！</li>
-                                    @endforelse
-                                </ul>
+                                <div class="card-count">{{ \App\Relationship::where('followed_user_id', $user->id)->count() }}</div>
                             </div>
                         </div>
                     </div>
