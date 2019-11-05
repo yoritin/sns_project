@@ -7,11 +7,11 @@
             <div class="user-header mb-3">
                 <div class="user-header-item">
                     <p>follow</p>
-                    <p>12</p>
+                    <p>{{ \App\Relationship::where('user_id', $user->id)->count() }}</p>
                 </div>
                 <div class="user-header-item">
                     <p>follower</p>
-                    <p>12</p>
+                    <p>{{ \App\Relationship::where('followed_user_id', $user->id)->count() }}</p>
                 </div>
                 <div class="user-header-item">
                     <p>like</p>
@@ -56,6 +56,14 @@
                                 <div class="card-count">{{ \App\Relationship::where('followed_user_id', $user->id)->count() }}</div>
                             </div>
                         </div>
+                        <ul>
+                            <!-- follower -->
+                            @forelse($user->followed_relationships as $followed_relationship)
+                            <li>{{ $followed_relationship->pivot->user_id }}</li>
+                            @empty
+                            <li>いないよ！</li>
+                            @endforelse
+                        </ul>
                     </div>
                 </div>
             </div>
