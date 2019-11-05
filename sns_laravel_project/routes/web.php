@@ -19,7 +19,10 @@ Route::get('/', 'PostsController@index');
 Route::group(['middleware' => 'auth'], function() {
     Route::get('/posts/create', 'PostsController@create');
     Route::post('/', 'PostsController@store');
+    // relationship
+    Route::post('/relationship', 'RelationshipsController@store');
 });
 
 // users
 Route::resource('users', 'UsersController');
+

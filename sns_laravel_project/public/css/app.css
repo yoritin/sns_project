@@ -17090,3 +17090,11 @@ readers do not read off random characters that represent icons */
           transition-duration: 0.3s;
 }
 
+.user-container .card-header {
+  padding: 3px 10px;
+}
+
+.user-container .card-count {
+  padding: 3px 10px;
+}
+

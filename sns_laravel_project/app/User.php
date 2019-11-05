@@ -40,4 +40,12 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    public function relationships() {
+        return $this->belongsToMany(self::class, 'relationships', 'user_id', 'followed_user_id');
+    }
+
+    public function followed_relationships() {
+        return $this->belongsToMany(self::class, 'relationships', 'followed_user_id', 'user_id');
+    }
 }
