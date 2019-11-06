@@ -5,7 +5,9 @@
     <div class="post-content">
         <div class="post-header">
             <a href="{{ action('UsersController@show', $post->user_id) }}">{{ $post->user->name }}</a>
+            @if (Auth::id() === $post->user_id)
             <a href="{{ action('PostsController@edit', $post) }}" class="edit">[Edit]</a>
+            @endif
         </div>
         <div class="post-body">{!! nl2br(e($post->content)) !!}</div>
         <div class="post-footer">
