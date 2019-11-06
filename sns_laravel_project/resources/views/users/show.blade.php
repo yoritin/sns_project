@@ -31,9 +31,15 @@
                     <div class="card-body-name">{{ $user->name }}</div>
                     <div class="card-body">comment</div>
                     @if (Auth::id() === $user->id)
-                    <form action="" class="text-center mb-3">
-                        <button type="submit" class="user-btn">プロフィール編集</button>
-                    </form>
+                        @if (Auth::id() === 1)
+                        <form action="" class="text-center mb-3">
+                            <button type="submit" class="user-btn" disabled>編集できません</button>
+                        </form>
+                        @else
+                        <form action="" class="text-center mb-3">
+                            <button type="submit" class="user-btn">プロフィール編集</button>
+                        </form>
+                        @endif
                     @else
                     <form method="post" action="{{ url('/relationship') }}" class="text-center mb-3">
                         @csrf

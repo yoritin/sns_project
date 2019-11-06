@@ -8,8 +8,8 @@
                 <form method="post" action="{{ url('/') }}">
                     @csrf
                     <div class="form-group row">
-                        <label for="text" class="col-md-4 col-form-label text-md-right">
-                            {{ __('text') }}
+                        <label for="content" class="col-md-4 col-form-label text-md-right">
+                            {{ __('content') }}
                         </label>
                         <div class="col-md-6">
                             <!-- <input id="text" type="text" class="form-control" name="text" required autocomplete="current-text"> -->
