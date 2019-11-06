@@ -7,19 +7,11 @@
             <div class="user-header mb-3">
                 <div class="user-header-item">
                     <p>follow</p>
-<<<<<<< HEAD
-                    <p>12</p>
-                </div>
-                <div class="user-header-item">
-                    <p>follower</p>
-                    <p>12</p>
-=======
                     <p>{{ \App\Relationship::where('user_id', $user->id)->count() }}</p>
                 </div>
                 <div class="user-header-item">
                     <p>follower</p>
                     <p>{{ \App\Relationship::where('followed_user_id', $user->id)->count() }}</p>
->>>>>>> relationship
                 </div>
                 <div class="user-header-item">
                     <p>like</p>
@@ -46,11 +38,8 @@
                     <form method="post" action="{{ url('/relationship') }}" class="text-center mb-3">
                         @csrf
                         <p>{{ Auth::id() }} : {{ $user->id }}</p>
-<<<<<<< HEAD
-=======
                         <input type="hidden" value="{{ Auth::id() }}" name="user_id">
                         <input type="hidden" value="{{ $user->id }}" name="followed_user_id">
->>>>>>> relationship
                         <button type="submit" class="user-btn">フォロー ＋</button>
                     </form>
                     @endif
