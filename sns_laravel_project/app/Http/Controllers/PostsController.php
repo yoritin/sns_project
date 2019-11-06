@@ -25,4 +25,8 @@ class PostsController extends Controller
         $post->save();
         return redirect('/');
     }
+
+    public function edit (Post $post) {
+        return view('posts.edit')->with('post', $post);
+    }
 }
