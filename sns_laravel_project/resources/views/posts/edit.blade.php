@@ -13,7 +13,7 @@
                         </label>
                         <div class="col-md-6">
                             <!-- <input id="text" type="text" class="form-control" name="text" required autocomplete="current-text"> -->
-                            <textarea id="content" type="text" class="form-control" name="content" requred autocomplete="current-text" cols="30" rows="10"></textarea>
+                            <textarea id="content" type="text" class="form-control" name="content" requred autocomplete="current-text" cols="30" rows="10">{{ $post->content }}</textarea>
                             @if ($errors->has('content'))
                             <span class="error">{{ $errors->first('content') }}</span>
                             @endif
