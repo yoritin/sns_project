@@ -17,6 +17,8 @@ class CreateRelationshipsTable extends Migration
             $table->unsignedBigInteger('user_id');
             $table->unsignedBigInteger('followed_user_id')->index();
 
+            $table->timestamps();
+
             $table->unique(['user_id', 'followed_user_id']);
 
             $table
