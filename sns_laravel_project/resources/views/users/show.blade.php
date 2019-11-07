@@ -18,7 +18,7 @@
                     <p>12</p>
                 </div>
             </div>
-            @foreach($user->posts()->orderBy('updated_at', 'desc')->get() as $post)
+            @foreach($user->posts()->orderBy('created_at', 'desc')->get() as $post)
             @include('layouts.post')
             @endforeach
         </div>
