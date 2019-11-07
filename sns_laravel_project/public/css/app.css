@@ -17051,6 +17051,18 @@ readers do not read off random characters that represent icons */
   margin-left: auto;
 }
 
+.post .post-content .post-comment {
+  display: -webkit-box;
+  display: flex;
+  color: gray;
+  font-size: 0.8rem;
+}
+
+.post .post-content .post-comment p {
+  margin: 0;
+  padding: 0 5px;
+}
+
 .user-header {
   display: -webkit-box;
   display: flex;
