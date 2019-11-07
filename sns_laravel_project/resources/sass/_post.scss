@@ -45,6 +45,17 @@
                 margin-left: auto;
             }
         }
+
+        .post-comment {
+            display: flex;
+            color: gray;
+            font-size: 0.8rem;
+
+            p {
+                margin: 0;
+                padding: 0 5px;
+            }
+        }
     }
 }
 

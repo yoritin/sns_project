@@ -15,5 +15,9 @@
             <div class="footer-icon"><i class="far fa-comment"></i></div>
             <div class="footer-time">{{ $post->updated_at }}</div>
         </div>
+        <div class="post-comment">
+            <p>username</p>
+            <p>comment 1</p>
+        </div>
     </div>
 </div>
