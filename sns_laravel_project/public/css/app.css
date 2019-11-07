@@ -17001,7 +17001,6 @@ readers do not read off random characters that represent icons */
 .post {
   display: -webkit-box;
   display: flex;
-  list-style: none;
   border: solid 1px #dfdfdf;
   border-radius: 5px;
   background: #fff;
