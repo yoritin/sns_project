@@ -26,7 +26,7 @@
             <div class="card">
                 <div class="user-container">
                     <div class="card-body ">
-                        <img src="/storage/user_noimage.jpg" alt="user_noimage" width="250" height="250">
+                        <img src="/storage/user_noimage.jpg" alt="user_noimage" width="277" height="277">
                     </div>
                     <div class="card-body-name">{{ $user->name }}</div>
                     <div class="card-body">comment</div>
