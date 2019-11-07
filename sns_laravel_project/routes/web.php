@@ -16,6 +16,7 @@ Auth::routes();
 // posts
 Route::get('/', 'PostsController@index');
 Route::get('/post/{post}/edit', 'PostsController@edit');
+Route::patch('/', 'PostsController@update');
 
 Route::group(['middleware' => 'auth'], function() {
     Route::get('/posts/create', 'PostsController@create');

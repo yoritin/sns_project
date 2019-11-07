@@ -29,4 +29,12 @@ class PostsController extends Controller
     public function edit (Post $post) {
         return view('posts.edit')->with('post', $post);
     }
+
+    public function update (PostRequest $request, Post $post) {
+        $post = Post::find($request->id);
+        $post->user_id = Auth::id();
+        $post->content = $request->content;
+        $post->save();
+        return redirect('/');
+    }
 }
