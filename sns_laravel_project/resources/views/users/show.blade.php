@@ -62,15 +62,23 @@
                                 <div class="card-count">{{ \App\Relationship::where('followed_user_id', $user->id)->count() }}</div>
                             </div>
                         </div>
-                        <ul>
+                        <div>
                             <!-- follower -->
+                            {{ $user->id }}
                             @forelse($user->followed_relationships as $followed_relationship)
-                            <li>{{ $followed_relationship->pivot->user_id }}</li>
+                            <div>{{ $followed_relationship->pivot->user_id }}</div>
                             @empty
-                            <li>いないよ！</li>
+                            <div>いないよ！</div>
                             @endforelse
-                        </ul>
+                            <!-- 表示 -->
+                        </div>
                     </div>
+                </div>
+            </div>
+            <div class="card">
+                <div>
+                    <p>user_id:{{ $user->id }}</p>
+                    <p>followed_user_id:{{ \App\Relationship::where('user_id', Auth::id())->where('followed_user_id', $user->id)->first()['followed_user_id'] }}</p>
                 </div>
             </div>
         </div>
