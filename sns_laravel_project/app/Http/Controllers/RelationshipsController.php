@@ -15,4 +15,10 @@ class RelationshipsController extends Controller
         $relationship->save();
         return redirect()->back();
     }
+
+    public function destroy(Request $request) {
+        $relationship = Relationship::where('user_id', $request->user_id)->where('followed_user_id', $request->followed_user_id);
+        $relationship->delete();
+        return redirect()->back();
+    }
 }
