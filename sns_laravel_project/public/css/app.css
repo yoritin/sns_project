@@ -17021,11 +17021,29 @@ readers do not read off random characters that represent icons */
 }
 
 .post .post-content .post-header {
+  display: -webkit-box;
+  display: flex;
+}
+
+.post .post-content .post-header .post-header-name {
   font-size: 1.6rem;
+}
+
+.post .post-content .post-header .post-header-menu {
+  margin-left: auto;
+  margin-right: 15px;
+}
+
+.post .post-content .post-header .post-header-menu a {
+  color: gray;
 }
 
 .post .post-content .post-header .edit {
   font-size: 0.8rem;
+}
+
+.post .post-content .post-header .nav-link {
+  padding: 0;
 }
 
 .post .post-content .post-body {

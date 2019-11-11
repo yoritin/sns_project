@@ -4,9 +4,20 @@
     </div>
     <div class="post-content">
         <div class="post-header">
-            <a href="{{ action('UsersController@show', $post->user_id) }}">{{ $post->user->name }}</a>
+            <div class="post-header-name">
+                <a href="{{ action('UsersController@show', $post->user_id) }}">{{ $post->user->name }}</a>
+            </div>
+
             @if (Auth::id() === $post->user_id)
-            <a href="{{ action('PostsController@edit', $post) }}" class="edit">[Edit]</a>
+            <div class="post-header-menu dropdown show">
+                <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                    menu<span class="caret"></span>
+                </a>
+                <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                    <a class="dropdown-item" href="{{ action('PostsController@edit', $post) }}">編集する</a>
+                    <a class="dropdown-item" href="#">削除する</a>
+                </div>
+            </div>
             @endif
         </div>
         <div class="post-body">{!! nl2br(e($post->content)) !!}</div>
