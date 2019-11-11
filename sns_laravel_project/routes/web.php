@@ -21,10 +21,13 @@ Route::patch('/', 'PostsController@update');
 Route::group(['middleware' => 'auth'], function() {
     Route::get('/posts/create', 'PostsController@create');
     Route::post('/', 'PostsController@store');
+    // posts delete
+    Route::delete('/posts/{post}', 'PostsController@destroy');
     // relationship
     Route::post('/relationship', 'RelationshipsController@store');
     Route::delete('/relationship', 'RelationshipsController@destroy');
 });
+
 
 // users
 Route::resource('users', 'UsersController');

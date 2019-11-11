@@ -15,7 +15,13 @@
                 </a>
                 <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
                     <a class="dropdown-item" href="{{ action('PostsController@edit', $post) }}">編集する</a>
-                    <a class="dropdown-item" href="#">削除する</a>
+                    <form method="post" action="{{ url('posts', $post->id) }}">
+                        @csrf
+                        <input type="hidden" value="delete" name="_method">
+                        <button class="dropdown-item" type="submit">
+                            削除する
+                        </button>
+                    </form>
                 </div>
             </div>
             @endif

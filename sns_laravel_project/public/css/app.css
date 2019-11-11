@@ -17034,7 +17034,7 @@ readers do not read off random characters that represent icons */
   margin-right: 15px;
 }
 
-.post .post-content .post-header .post-header-menu a {
+.post .post-content .post-header .post-header-menu .nav-link {
   color: gray;
 }
 
