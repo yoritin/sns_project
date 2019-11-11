@@ -53,7 +53,6 @@
                         @else
                         <form method="post" action="{{ url('/relationship') }}" class="text-center mb-3">
                         @csrf
-                            <p>{{ Auth::id() }} : {{ $user->id }}</p>
                             <input type="hidden" value="{{ Auth::id() }}" name="user_id">
                             <input type="hidden" value="{{ $user->id }}" name="followed_user_id">
                             <button type="submit" class="user-btn">フォロー ＋</button>
@@ -73,23 +72,7 @@
                                 <div class="card-count">{{ \App\Relationship::where('followed_user_id', $user->id)->count() }}</div>
                             </div>
                         </div>
-                        <div>
-                            <!-- follower -->
-                            {{ $user->id }}
-                            @forelse($user->followed_relationships as $followed_relationship)
-                            <div>{{ $followed_relationship->pivot->user_id }}</div>
-                            @empty
-                            <div>いないよ！</div>
-                            @endforelse
-                            <!-- 表示 -->
-                        </div>
                     </div>
-                </div>
-            </div>
-            <div class="card">
-                <div>
-                    <p>user_id:{{ $user->id }}</p>
-                    <p>followed_user_id:{{ \App\Relationship::where('user_id', Auth::id())->where('followed_user_id', $user->id)->first()['followed_user_id'] }}</p>
                 </div>
             </div>
         </div>
