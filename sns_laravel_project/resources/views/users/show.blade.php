@@ -45,11 +45,14 @@
                         @if($user->id === \App\Relationship::where('user_id', Auth::id())->where('followed_user_id', $user->id)->first()['followed_user_id'])
                         <form method="post" action="{{ url('/relationship') }}" class="text-center mb-3">
                             @csrf
+                            <input type="hidden" value="delete" name="_method">
+                            <input type="hidden" value="{{ Auth::id() }}" name="user_id">
+                            <input type="hidden" value="{{ $user->id }}" name="followed_user_id">
                             <button type="submit" class="user-btn">フォロー解除</button>
                         </form>
                         @else
                         <form method="post" action="{{ url('/relationship') }}" class="text-center mb-3">
-                            @csrf
+                        @csrf
                             <p>{{ Auth::id() }} : {{ $user->id }}</p>
                             <input type="hidden" value="{{ Auth::id() }}" name="user_id">
                             <input type="hidden" value="{{ $user->id }}" name="followed_user_id">
