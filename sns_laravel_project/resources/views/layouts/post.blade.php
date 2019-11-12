@@ -29,7 +29,29 @@
         <div class="post-body">{!! nl2br(e($post->content)) !!}</div>
         <div class="post-footer">
             <div class="footer-icon"><i class="far fa-heart">12</i></div>
-            <div class="footer-icon"><i class="far fa-comment"></i></div>
+            <div class="footer-icon"><i class="far fa-comment" data-toggle="modal" data-target="#exampleModal"></i></div>
+            <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalLabel">New comment</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <form>
+                                <div class="form-group">
+                                    <label for="message-text" class="col-form-label">Comment:</label>
+                                    <textarea class="form-control" id="message-text"></textarea>
+                                </div>
+                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                <button type="button" class="btn btn-primary">Send comment</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
             <div class="footer-time">{{ $post->updated_at }}</div>
         </div>
         <div class="post-comment">
