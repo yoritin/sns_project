@@ -44,7 +44,7 @@
                                 @csrf
                                 <div class="form-group">
                                     <label for="message-text" class="col-form-label">Comment:</label>
-                                    <input type="hidden" value="{{ $post->id }}" name="post_id">
+                                    <input type="text" value="{{ $post->id }}" name="post_id">
                                     <textarea class="form-control" id="message-text" name="content"></textarea>
                                 </div>
                                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
@@ -60,5 +60,11 @@
             <p>username</p>
             <p>comment 1</p>
         </div>
+        @foreach($post->comments as $comment)
+        <div class="post-comment">
+            <p>{{ $comment->user->name }}</p>
+            <p>{{ $comment->content }}</p>
+        </div>
+        @endforeach
     </div>
 </div>
