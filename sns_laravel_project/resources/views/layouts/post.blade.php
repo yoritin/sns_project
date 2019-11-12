@@ -40,13 +40,13 @@
                             </button>
                         </div>
                         <div class="modal-body">
-                            <form>
+                            <form method="post" action="{{ url('/comments') }}">
                                 <div class="form-group">
                                     <label for="message-text" class="col-form-label">Comment:</label>
                                     <textarea class="form-control" id="message-text"></textarea>
                                 </div>
                                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                                <button type="button" class="btn btn-primary">Send comment</button>
+                                <button type="submit" class="btn btn-primary">Send comment</button>
                             </form>
                         </div>
                     </div>
