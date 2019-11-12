@@ -41,9 +41,9 @@
                         </div>
                         <div class="modal-body">
                             <form method="post" action="{{ url('/comments') }}">
+                                @csrf
                                 <div class="form-group">
                                     <label for="message-text" class="col-form-label">Comment:</label>
-                                    <input type="hidden" value="{{ Auth::id() }}" name="user_id"> 
                                     <input type="hidden" value="{{ $post->id }}" name="post_id">
                                     <textarea class="form-control" id="message-text" name="content"></textarea>
                                 </div>
