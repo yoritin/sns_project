@@ -29,7 +29,10 @@
         <div class="post-body">{!! nl2br(e($post->content)) !!}</div>
         <div class="post-footer">
             <div class="footer-icon"><i class="far fa-heart">12</i></div>
-            <div class="footer-icon"><i class="far fa-comment comment-show"></i></div>
+            <div class="footer-icon">
+                <i class="far fa-comment comment-show"></i>
+                {{ App\Comment::where('post_id', $post->id)->count() }}
+            </div>
             <div class="footer-time">{{ $post->updated_at }}</div>
         </div>
         <div class="post-footer-comment">
