@@ -29,22 +29,24 @@
         <div class="post-body">{!! nl2br(e($post->content)) !!}</div>
         <div class="post-footer">
             <div class="footer-icon"><i class="far fa-heart">12</i></div>
-            <div class="footer-icon"><i class="far fa-comment"></i></div>
+            <div class="footer-icon"><i class="far fa-comment comment-show"></i></div>
             <div class="footer-time">{{ $post->updated_at }}</div>
         </div>
-        @foreach($post->comments as $comment)
-        <div class="post-comment my-3">
-            <p>{{ $comment->user->name }}</p>
-            <p>{{ $comment->content }}</p>
-        </div>
-        @endforeach
-        <form method="post" action="{{ url('/comments') }}">
-            @csrf
-            <div class="form-group mt-3">
-                <input type="hidden" value="{{ $post->id }}" name="post_id">
-                <textarea class="form-control" id="message-text" name="content"></textarea>
+        <div class="post-footer-comment">
+            @foreach($post->comments as $comment)
+            <div class="post-comment my-3">
+                <p>{{ $comment->user->name }}</p>
+                <p>{{ $comment->content }}</p>
             </div>
-            <button type="submit" class="btn btn-primary btn-sm">Send comment</button>
-        </form>
+            @endforeach
+            <form method="post" action="{{ url('/comments') }}">
+                @csrf
+                <div class="form-group mt-3">
+                    <input type="hidden" value="{{ $post->id }}" name="post_id">
+                    <textarea class="form-control" id="message-text" name="content"></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary btn-sm">Send comment</button>
+            </form>
+        </div>
     </div>
 </div>

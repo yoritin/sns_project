@@ -17080,6 +17080,10 @@ readers do not read off random characters that represent icons */
   padding-right: 10px;
 }
 
+.post .post-content .post-footer-comment {
+  display: none;
+}
+
 .user-header {
   display: -webkit-box;
   display: flex;
