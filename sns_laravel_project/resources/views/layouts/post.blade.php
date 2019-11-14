@@ -30,12 +30,12 @@
         <div class="post-footer">
             <div class="footer-icon"><i class="far fa-heart">12</i></div>
             <div class="footer-icon">
-                <i class="far fa-comment comment-show"></i>
+                <i class="far fa-comment comment-show" data-id="{{ $post->id }}"></i>
                 {{ App\Comment::where('post_id', $post->id)->count() }}
             </div>
             <div class="footer-time">{{ $post->updated_at }}</div>
         </div>
-        <div class="post-footer-comment">
+        <div class="post-footer-comment" data-id="{{ $post->id }}">
             @foreach($post->comments as $comment)
             <div class="post-comment my-3">
                 <p>{{ $comment->user->name }}</p>
