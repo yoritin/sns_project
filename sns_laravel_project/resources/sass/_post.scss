@@ -69,8 +69,12 @@
 
             p {
                 margin: 0;
-                padding: 0 5px;
+                padding-right: 10px;
             }
+        }
+
+        .post-footer-comment {
+            display: none;
         }
     }
 }

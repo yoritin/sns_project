@@ -23,6 +23,8 @@ Route::group(['middleware' => 'auth'], function() {
     Route::post('/', 'PostsController@store');
     // posts delete
     Route::delete('/posts/{post}', 'PostsController@destroy');
+    // comments
+    Route::post('/comments', 'CommentsController@store');
     // relationship
     Route::post('/relationship', 'RelationshipsController@store');
     Route::delete('/relationship', 'RelationshipsController@destroy');

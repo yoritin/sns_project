@@ -17077,7 +17077,11 @@ readers do not read off random characters that represent icons */
 
 .post .post-content .post-comment p {
   margin: 0;
-  padding: 0 5px;
+  padding-right: 10px;
+}
+
+.post .post-content .post-footer-comment {
+  display: none;
 }
 
 .user-header {
