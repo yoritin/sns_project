@@ -12,11 +12,11 @@ class PostsController extends Controller
 {
     public function index() {
         if (Auth::check()) {
+            // フォローしているユーザーを取得
             $relationship = Relationship::where('user_id', Auth::id())->get()->toArray();
-            // dd($relationship);
-            // $follow = [1, 2, 3];
+            // フォローしているユーザーのIDを配列で取得
             $follow = array_column($relationship, 'followed_user_id');
-            $posts = Post::whereIn('user_id', $follow)->latest()->get();
+            $posts = Post::whereIn('user_id', $follow)->orWhere('user_id', Auth::id())->latest()->get();
         } else {
             $posts = Post::latest()->get();
         }
