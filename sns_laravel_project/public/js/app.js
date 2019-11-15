@@ -49374,6 +49374,22 @@ var app = new Vue({
 
 /***/ }),
 
+/***/ "./resources/js/assets/jquery.js":
+/*!***************************************!*\
+  !*** ./resources/js/assets/jquery.js ***!
+  \***************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+$(function () {
+  $('.comment-show').click(function () {
+    // クリックした要素から動作させたい要素までを指定
+    $(this).parent('.footer-icon').parent('.post-footer').next('.post-footer-comment').toggle('slow');
+  });
+});
+
+/***/ }),
+
 /***/ "./resources/js/bootstrap.js":
 /*!***********************************!*\
   !*** ./resources/js/bootstrap.js ***!
@@ -49500,13 +49516,14 @@ __webpack_require__.r(__webpack_exports__);
 /***/ }),
 
 /***/ 0:
-/*!*************************************************************!*\
-  !*** multi ./resources/js/app.js ./resources/sass/app.scss ***!
-  \*************************************************************/
+/*!*********************************************************************************************!*\
+  !*** multi ./resources/js/app.js ./resources/js/assets/jquery.js ./resources/sass/app.scss ***!
+  \*********************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
 __webpack_require__(/*! /var/www/resources/js/app.js */"./resources/js/app.js");
+__webpack_require__(/*! /var/www/resources/js/assets/jquery.js */"./resources/js/assets/jquery.js");
 module.exports = __webpack_require__(/*! /var/www/resources/sass/app.scss */"./resources/sass/app.scss");
 
 
