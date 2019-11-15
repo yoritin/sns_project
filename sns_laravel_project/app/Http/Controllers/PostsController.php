@@ -10,7 +10,11 @@ use App\Http\Requests\PostRequest;
 class PostsController extends Controller
 {
     public function index() {
-        $posts = Post::latest()->get();
+        if (Auth::check()) {
+            $posts = Post::where('user_id', 3)->latest()->get();
+        } else {
+            $posts = Post::latest()->get();
+        }
         return view('posts.index')->with('posts', $posts);
     }
 
