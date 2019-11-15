@@ -5,13 +5,18 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use App\post;
+use App\Relationship;
 use App\Http\Requests\PostRequest;
 
 class PostsController extends Controller
 {
     public function index() {
         if (Auth::check()) {
-            $posts = Post::where('user_id', 3)->latest()->get();
+            $relationship = Relationship::where('user_id', Auth::id())->get()->toArray();
+            // dd($relationship);
+            // $follow = [1, 2, 3];
+            $follow = array_column($relationship, 'followed_user_id');
+            $posts = Post::whereIn('user_id', $follow)->latest()->get();
         } else {
             $posts = Post::latest()->get();
         }
