@@ -28,7 +28,31 @@
         </div>
         <div class="post-body">{!! nl2br(e($post->content)) !!}</div>
         <div class="post-footer">
-            <div class="footer-icon"><i class="far fa-heart">12</i></div>
+            <div class="footer-icon">
+                @guest
+                <a href="{{ url('/login') }}">
+                    <i class="far fa-heart"></i>
+                </a>
+                {{ \App\Like::where('post_id', $post->id)->count() }}
+                @else
+                    @if(Auth::id() === \App\Like::where('user_id', Auth::id())->where('post_id', $post->id)->first()['user_id'])
+                    <form method="post" action="{{ url('/likes') }}">
+                        @csrf
+                        <input type="hidden" name="_method" value="delete">
+                        <input type="hidden" name="post_id" value="{{ $post->id }}">
+                        <button type="submit"><i class="fas fa-heart red"></i></button>
+                        {{ \App\Like::where('post_id', $post->id)->count() }}
+                    </form>
+                    @else
+                    <form method="post" action="{{ url('/likes') }}">
+                        @csrf
+                        <input type="hidden" value="{{ $post->id }}" name="post_id">
+                        <button type="submit"><i class="far fa-heart"></i></button>
+                        {{ \App\Like::where('post_id', $post->id)->count() }}
+                    </form>
+                    @endif
+                @endguest
+            </div>
             <div class="footer-icon">
                 <i class="far fa-comment comment-show" data-id="{{ $post->id }}"></i>
                 {{ App\Comment::where('post_id', $post->id)->count() }}
