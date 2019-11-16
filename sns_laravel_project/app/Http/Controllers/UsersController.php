@@ -16,4 +16,8 @@ class UsersController extends Controller
     public function show(User $user) {
         return view('users.show')->with('user', $user);
     }
+
+    public function edit() {
+        return view('users.edit');
+    }
 }
