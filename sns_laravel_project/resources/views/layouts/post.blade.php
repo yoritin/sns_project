@@ -34,8 +34,13 @@
                 {{ \App\Like::where('post_id', $post->id)->count() }}
                 @else
                     @if(Auth::id() === \App\Like::where('user_id', Auth::id())->where('post_id', $post->id)->first()['user_id'])
-                    <i class="fas fa-heart red"></i>
-                    {{ \App\Like::where('post_id', $post->id)->count() }}
+                    <form meshod="post" action="{{ url('/likes') }}">
+                        @csrf
+                        <input type="hidden" value="delete" name="_method">
+                        <input type="hidden" value="{{ $post->id }}" name="post_id">
+                        <button type="submit"><i class="fas fa-heart red"></i></button>
+                        {{ \App\Like::where('post_id', $post->id)->count() }}
+                    </form>
                     @else
                     <form method="post" action="{{ url('/likes') }}">
                         @csrf
