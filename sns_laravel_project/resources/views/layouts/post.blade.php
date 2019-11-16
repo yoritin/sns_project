@@ -30,7 +30,9 @@
         <div class="post-footer">
             <div class="footer-icon">
                 @guest
-                <i class="far fa-heart"></i>
+                <a href="{{ url('/login') }}">
+                    <i class="far fa-heart"></i>
+                </a>
                 {{ \App\Like::where('post_id', $post->id)->count() }}
                 @else
                     @if(Auth::id() === \App\Like::where('user_id', Auth::id())->where('post_id', $post->id)->first()['user_id'])

@@ -17075,6 +17075,10 @@ readers do not read off random characters that represent icons */
   color: tomato;
 }
 
+.post .post-content .post-footer .footer-icon a {
+  color: gray;
+}
+
 .post .post-content .post-footer .footer-time {
   margin-left: auto;
 }
