@@ -29,11 +29,19 @@
         <div class="post-body">{!! nl2br(e($post->content)) !!}</div>
         <div class="post-footer">
             <div class="footer-icon">
+                <!-- {{ \App\Like::where('user_id', Auth::id())->first()['user_id'] }} -->
+                @if(Auth::id() === \App\Like::where('user_id', Auth::id())->where('post_id', $post->id)->first()['user_id'])
+                <i class="fas fa-heart red"></i>
+                {{ \App\Like::where('post_id', $post->id)->count() }}
+                @else
                 <form method="post" action="{{ url('/likes') }}">
                     @csrf
                     <input type="hidden" value="{{ $post->id }}" name="post_id">
-                    <button type="submit"><i class="far fa-heart">12</i></button>
+                    <button type="submit"><i class="far fa-heart"></i></button>
+                    {{ \App\Like::where('post_id', $post->id)->count() }}
                 </form>
+                @endif
+
             </div>
             <div class="footer-icon">
                 <i class="far fa-comment comment-show" data-id="{{ $post->id }}"></i>
