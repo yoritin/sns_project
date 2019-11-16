@@ -15,4 +15,10 @@ class LikesController extends Controller
         $like->save();
         return redirect()->back();
     }
+
+    public function destroy(Request $request) {
+        $like = Like::where('user_id', Auth::id())->where('post_id', $request->post_id);
+        $like->delete();
+        return redirect()->back();
+    } 
 }
