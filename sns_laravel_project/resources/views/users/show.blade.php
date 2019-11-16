@@ -6,6 +6,10 @@
         <div class="col-md-8">
             <div class="user-header mb-3">
                 <div class="user-header-item">
+                    <p>post</p>
+                    <p>{{ \App\Post::where('user_id', $user->id)->count() }}</p>
+                </div>
+                <div class="user-header-item">
                     <p>follow</p>
                     <p>{{ \App\Relationship::where('user_id', $user->id)->count() }}</p>
                 </div>
@@ -15,7 +19,7 @@
                 </div>
                 <div class="user-header-item">
                     <p>like</p>
-                    <p>12</p>
+                    <p>{{ \App\Like::where('user_id', $user->id)->count() }}</p>
                 </div>
             </div>
             @foreach($user->posts()->orderBy('created_at', 'desc')->get() as $post)
