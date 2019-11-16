@@ -30,6 +30,7 @@
         <div class="post-footer">
             <div class="footer-icon">
                 <form method="post" action="{{ url('/likes') }}">
+                    @csrf
                     <input type="hidden" value="{{ $post->id }}" name="post_id">
                     <button type="submit"><i class="far fa-heart">12</i></button>
                 </form>
