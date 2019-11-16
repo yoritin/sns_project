@@ -17064,6 +17064,13 @@ readers do not read off random characters that represent icons */
   cursor: pointer;
 }
 
+.post .post-content .post-footer .footer-icon button {
+  background: #fff;
+  border: none;
+  padding: 0;
+  color: gray;
+}
+
 .post .post-content .post-footer .footer-time {
   margin-left: auto;
 }
