@@ -23,6 +23,11 @@ class PostsController extends Controller
         return view('posts.index')->with('posts', $posts);
     }
 
+    public function newInfo() {
+        $posts = Post::latest()->get();
+        return view('posts.index')->with('posts', $posts);
+    }
+
     public function create() {
         return view('posts.create');
     }
