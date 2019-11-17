@@ -41,7 +41,9 @@
                         </form>
                         @else
                         <form action="" class="text-center mb-3">
-                            <button type="submit" class="user-btn">プロフィール編集</button>
+                            <button type="button" class="user-btn" onclick="location.href='{{ action('UsersController@edit', Auth::id()) }}'">
+                                プロフィール編集
+                            </button>
                         </form>
                         @endif
                     @else

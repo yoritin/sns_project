@@ -52,4 +52,8 @@ class PostsController extends Controller
         $post->delete();
         return redirect()->back();
     }
+
+    public function testuser() {
+        return redirect('/');
+    }
 }
