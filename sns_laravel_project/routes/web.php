@@ -16,6 +16,7 @@ Route::get('/users/1/edit', 'PostsController@testuser');
 
 // posts
 Route::get('/', 'PostsController@index');
+Route::get('/posts/new-info', 'PostsController@newInfo');
 Route::get('/post/{post}/edit', 'PostsController@edit');
 Route::patch('/', 'PostsController@update');
 
