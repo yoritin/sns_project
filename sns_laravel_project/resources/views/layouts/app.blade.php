@@ -51,15 +51,21 @@
 
                                 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
                                     <a class="dropdown-item" href="{{ url('/users', Auth::id()) }}">
-                                        {{ __('my page') }}
+                                        {{ __('マイページ') }}
                                     </a>
+                                    @if (Auth::id() === 1)
+                                    <a class="dropdown-item" href="">
+                                        {{ __('設定出来ません') }}
+                                    </a>
+                                    @else
                                     <a class="dropdown-item" href="{{ action('UsersController@edit', Auth::id()) }}">
-                                        {{ __('setting') }}
+                                        {{ __('設定') }}
                                     </a>
+                                    @endif
                                     <a class="dropdown-item" href="{{ route('logout') }}"
                                        onclick="event.preventDefault();
                                                     document.getElementById('logout-form').submit();">
-                                        {{ __('Logout') }}
+                                        {{ __('ログアウト') }}
                                     </a>
 
                                     <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
