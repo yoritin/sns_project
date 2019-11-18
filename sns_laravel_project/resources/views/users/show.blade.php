@@ -33,7 +33,7 @@
                         <img src="/storage/user_noimage.jpg" alt="user_noimage" width="277" height="277">
                     </div>
                     <div class="card-body-name">{{ $user->name }}</div>
-                    <div class="card-body">comment</div>
+                    <div class="card-body">{{ $user->comment }}</div>
                     @if (Auth::id() === $user->id)
                     <div class="text-center mb-3">
                         <button type="button" class="user-btn" data-toggle="modal" data-target="#exampleModal">
@@ -53,14 +53,14 @@
                                 <div class="modal-body">
                                     <form method="post" action="{{ url('/profile') }}">
                                         @csrf
-                                        @method('PATCH')
+                                        @method('patch')
                                         <div class="form-group">
                                             <label for="post-user-icon" class="col-form-label">ユーザーアイコン</label>
                                             <input type="file" class="form-control" id="post-user-icon" name="image">
                                         </div>
                                         <div class="form-group">
                                             <label for="message-text" class="col-form-label">自己紹介</label>
-                                            <textarea class="form-control" id="message-text" name="comment"></textarea>
+                                            <textarea class="form-control" id="message-text" name="comment">{{ $user->comment }}</textarea>
                                         </div>
                                         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
                                         <button type="submit" class="btn btn-primary">Send message</button>

@@ -39,6 +39,12 @@ class UsersController extends Controller
     }
 
     public function updateProfile(Request $request, User $user) {
-        return view('users.show')->with('user', $user);
+        $user = User::find(Auth::id());
+        $user->name = $user->name;
+        $user->email = $user->email;
+        $user->password = $user->password;
+        $user->comment = $request->comment;
+        $user->save();
+        return redirect()->back();
     }
 }
