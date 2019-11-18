@@ -33,10 +33,12 @@ class UsersController extends Controller
         $user->email = $request->email;
         $user->password = Hash::make($request['password']);
 
-
-
         $auth = Auth::id();
         $user->save();
+        return view('users.show')->with('user', $user);
+    }
+
+    public function updateProfile(Request $request, User $user) {
         return view('users.show')->with('user', $user);
     }
 }
