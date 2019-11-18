@@ -35,17 +35,38 @@
                     <div class="card-body-name">{{ $user->name }}</div>
                     <div class="card-body">comment</div>
                     @if (Auth::id() === $user->id)
-                        @if (Auth::id() === 1)
-                        <form action="" class="text-center mb-3">
-                            <button type="submit" class="user-btn" disabled>編集できません</button>
-                        </form>
-                        @else
-                        <form action="" class="text-center mb-3">
-                            <button type="button" class="user-btn" onclick="location.href='{{ action('UsersController@edit', Auth::id()) }}'">
-                                プロフィール編集
-                            </button>
-                        </form>
-                        @endif
+                    <div class="text-center mb-3">
+                        <button type="button" class="user-btn" data-toggle="modal" data-target="#exampleModal">
+                            プロフィール編集
+                        </button>
+                    </div>
+
+                    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                        <div class="modal-dialog" role="document">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title" id="exampleModalLabel">プロフィール編集</h5>
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                        <span aria-hidden="true">&times;</span>
+                                    </button>
+                                </div>
+                                <div class="modal-body">
+                                    <form>
+                                        <div class="form-group">
+                                            <label for="post-user-icon" class="col-form-label">ユーザーアイコン</label>
+                                            <input type="file" class="form-control" id="post-user-icon" name="image">
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="message-text" class="col-form-label">自己紹介</label>
+                                            <textarea class="form-control" id="message-text" name="comment"></textarea>
+                                        </div>
+                                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                        <button type="button" class="btn btn-primary">Send message</button>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                     @else
                         <!-- users.showの$user->idとrelationshipテーブルのfollowed_user_idが同じであればフォロー解除ボタンを表示する -->
                         @if($user->id === \App\Relationship::where('user_id', Auth::id())->where('followed_user_id', $user->id)->first()['followed_user_id'])
