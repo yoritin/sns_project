@@ -7,7 +7,6 @@
             <div class="post-header-name">
                 <a href="{{ action('UsersController@show', $post->user_id) }}">{{ $post->user->name }}</a>
             </div>
-
             @if (Auth::id() === $post->user_id)
             <div class="post-header-menu dropdown show">
                 <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
