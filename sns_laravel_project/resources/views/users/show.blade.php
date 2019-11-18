@@ -51,7 +51,9 @@
                                     </button>
                                 </div>
                                 <div class="modal-body">
-                                    <form>
+                                    <form method="post" action="{{ url('/profile') }}">
+                                        @csrf
+                                        @method('PATCH')
                                         <div class="form-group">
                                             <label for="post-user-icon" class="col-form-label">ユーザーアイコン</label>
                                             <input type="file" class="form-control" id="post-user-icon" name="image">
@@ -61,7 +63,7 @@
                                             <textarea class="form-control" id="message-text" name="comment"></textarea>
                                         </div>
                                         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                                        <button type="button" class="btn btn-primary">Send message</button>
+                                        <button type="submit" class="btn btn-primary">Send message</button>
                                     </form>
                                 </div>
                             </div>
