@@ -29,8 +29,12 @@
         <div class="col-md-4">
             <div class="card">
                 <div class="user-container">
-                    <div class="card-body ">
+                    <div class="card-body">
+                        @if($user->image_path === null)
                         <img src="/storage/user_noimage.jpg" alt="user_noimage" width="277" height="277">
+                        @else
+                        <img src="{{ $user->image_path }}" alt="user_noimage" width="277" height="277">
+                        @endif
                     </div>
                     <div class="card-body-name">{{ $user->name }}</div>
                     <div class="card-body">{{ $user->comment }}</div>
@@ -51,7 +55,7 @@
                                     </button>
                                 </div>
                                 <div class="modal-body">
-                                    <form method="post" action="{{ url('/profile') }}">
+                                    <form method="post" action="{{ url('/profile') }}" enctype="multipart/form-data">
                                         @csrf
                                         @method('patch')
                                         <div class="form-group">
@@ -62,8 +66,8 @@
                                             <label for="message-text" class="col-form-label">自己紹介</label>
                                             <textarea class="form-control" id="message-text" name="comment">{{ $user->comment }}</textarea>
                                         </div>
-                                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                                        <button type="submit" class="btn btn-primary">Send message</button>
+                                        <button type="button" class="btn btn-secondary" data-dismiss="modal">閉じる</button>
+                                        <button type="submit" class="btn btn-primary">更新</button>
                                     </form>
                                 </div>
                             </div>
