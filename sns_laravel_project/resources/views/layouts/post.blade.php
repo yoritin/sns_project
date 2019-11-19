@@ -1,13 +1,16 @@
 <div class="post mb-3">
     <div class="user-icon">
+        @if($post->user->image_path === null)
         <img class="user-image" src="/storage/user_noimage.jpg" alt="noimage" width="40" height="40">
+        @else
+        <img class="user-image" src="{{ $post->user->image_path }}" alt="noimage" width="40" height="40">
+        @endif
     </div>
     <div class="post-content">
         <div class="post-header">
             <div class="post-header-name">
                 <a href="{{ action('UsersController@show', $post->user_id) }}">{{ $post->user->name }}</a>
             </div>
-
             @if (Auth::id() === $post->user_id)
             <div class="post-header-menu dropdown show">
                 <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>

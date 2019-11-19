@@ -27,6 +27,8 @@ Route::group(['middleware' => 'auth'], function() {
     Route::post('/', 'PostsController@store');
     // posts delete
     Route::delete('/posts/{post}', 'PostsController@destroy');
+    // profile
+    Route::patch('/profile', 'UsersController@updateProfile');
     // like
     Route::post('/likes', 'LikesController@store');
     Route::delete('/likes', 'LikesController@destroy');
