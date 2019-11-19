@@ -46,15 +46,14 @@ class UsersController extends Controller
         $user->password = $user->password;
         $user->comment = $request->comment;
 
-
-        // dd($request->file('image'));
-        //s3アップロード開始
-        $image = $request->file('image');
-        // dd($image);
-        // バケットの`user-icon`フォルダへアップロード
-        $path = Storage::disk('s3')->putFile('user-icon', $image, 'public');
-        // アップロードした画像のフルパスを取得
-        $user->image_path = Storage::disk('s3')->url($path);
+        if($request->has('image')) {
+            //s3アップロード開始
+            $image = $request->file('image');
+            // バケットの`user-icon`フォルダへアップロード
+            $path = Storage::disk('s3')->putFile('user-icon', $image, 'public');
+            // アップロードした画像のフルパスを取得
+            $user->image_path = Storage::disk('s3')->url($path);
+        }
         $user->save();
         return redirect()->back();
     }
