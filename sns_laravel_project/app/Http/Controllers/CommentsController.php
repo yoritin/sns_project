@@ -5,9 +5,9 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Http\Requests\PostRequest;
 use Illuminate\Support\Facades\Auth;
-use App\user;
+use App\User;
 use App\post;
-use App\comment;
+use App\Comment;
 
 class CommentsController extends Controller
 {

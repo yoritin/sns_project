@@ -3,8 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\relationship;
-use App\user;
+use App\Relationship;
+use App\User;
 
 class RelationshipsController extends Controller
 {
