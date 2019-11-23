@@ -66,10 +66,10 @@
                                 <button type="submit" class="btn btn-primary">
                                     {{ __('登録') }}
                                 </button>
+                                <div>
+                                    <a href="{{ url('/login') }}">既に登録済みの方はこちら</a>
+                                </div>
                             </div>
-                        </div>
-                        <div>
-                            <a href="">既に登録済みの方はこちら</a>
                         </div>
                     </form>
                 </div>

@@ -56,12 +56,6 @@
                                 <button type="submit" class="btn btn-primary">
                                     {{ __('ログイン') }}
                                 </button>
-
-                                @if (Route::has('password.request'))
-                                    <a class="btn btn-link" href="{{ url('/register') }}">
-                                        {{ __('新規作成') }}
-                                    </a>
-                                @endif
                             </div>
                         </div>
                     </form>
@@ -75,7 +69,11 @@
                                 <button type="submit" class="btn btn-primary">
                                     {{ __('簡単ログイン') }}
                                 </button>
+                                <div>
+                                    <a href="{{ url('/register') }}">アカウントをお持ちでない方はこちら</a>
+                                </div>
                                 <p>※テストユーザーとしてログインできます。</p>
+                                
                             </div>
                         </div>
                     </form>
