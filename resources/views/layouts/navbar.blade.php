@@ -13,18 +13,21 @@
                 <!-- Authentication Links -->
                 @guest
                     <li class="nav-item">
-                        <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
+                        <a class="nav-link" href="{{ route('login') }}">{{ __('ログイン') }}</a>
                     </li>
                     @if (Route::has('register'))
                         <li class="nav-item">
-                            <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
+                            <a class="nav-link" href="{{ route('register') }}">{{ __('新規登録') }}</a>
                         </li>
                     @endif
                 @else
                     <li class="nav-item">
                         <a class="nav-link" href="{{ url('/posts/new-info') }}">
-                            {{ __('新着') }}
+                            {{ __('新着投稿') }}
                         </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ url('/posts/create') }}">投稿する</a>
                     </li>
                     <li class="nav-item dropdown">
                         <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
@@ -53,11 +56,6 @@
                                 @csrf
                             </form>
                         </div>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="{{ url('/posts/create') }}">
-                            <i class="fas fa-edit"></i>
-                        </a>
                     </li>
                 @endguest
             </ul>
