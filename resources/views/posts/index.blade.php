@@ -18,6 +18,9 @@
                         </div>
                     </div>
                     <div class="post-body">こんにちは！ここにはフォローしたユーザーの投稿が表示されます</div>
+                    <div class="post-body">新着投稿から面白いユーザーを見つけてフォローしてみましょう！</div>
+                    <div class="post-body">ユーザーページへ行くとフォローできます！</div>
+                    <div><a href="{{ url('/posts/new-info') }}">さっそく新着投稿を見てみる</a></div>
                     <div class="post-footer">
                         <div class="footer-icon">
                             <a href="">
@@ -26,7 +29,7 @@
                         </div>
                         <div class="footer-icon">
                             <i class="far fa-comment comment-show" data-id="1"></i>
-                            34
+                            1
                         </div>
                         <div class="footer-time">2019-11-22 17:50:18</div>
                     </div>
@@ -39,7 +42,7 @@
                             <div class="form-group mt-3">
                                 <textarea class="form-control" id="message-text" name="content"></textarea>
                             </div>
-                            <button type="submit" class="btn btn-primary btn-sm">Send comment</button>
+                            <button type="submit" class="btn btn-primary btn-sm">コメントする</button>
                         </form>
                     </div>
                 </div>
