@@ -6,19 +6,19 @@
         <div class="col-md-8">
             <div class="user-header mb-3">
                 <div class="user-header-item">
-                    <p>post</p>
+                    <p>投稿数</p>
                     <p>{{ \App\Post::where('user_id', $user->id)->count() }}</p>
                 </div>
                 <div class="user-header-item">
-                    <p>follow</p>
+                    <p>フォロー</p>
                     <p>{{ \App\Relationship::where('user_id', $user->id)->count() }}</p>
                 </div>
                 <div class="user-header-item">
-                    <p>follower</p>
+                    <p>フォロワー</p>
                     <p>{{ \App\Relationship::where('followed_user_id', $user->id)->count() }}</p>
                 </div>
                 <div class="user-header-item">
-                    <p>like</p>
+                    <p>いいね！</p>
                     <p>{{ \App\Like::where('user_id', $user->id)->count() }}</p>
                 </div>
             </div>
@@ -40,9 +40,22 @@
                     <div class="card-body">{{ $user->comment }}</div>
                     @if (Auth::id() === $user->id)
                     <div class="text-center mb-3">
-                        <button type="button" class="user-btn" data-toggle="modal" data-target="#exampleModal">
+                        <button type="button" class="user-btn mb-3" data-toggle="modal" data-target="#exampleModal">
                             プロフィール編集
                         </button>
+                        <div>
+
+                            @if (Auth::id() === 1)
+                            <button class="user-btn" onclick="location.href='{{ action('UsersController@edit', Auth::id()) }}'">
+                                {{ __('ユーザー設定') }}
+                            </button>
+                            <p>テストユーザーは設定出来ません</p>
+                            @else
+                            <button class="user-btn" onclick="location.href='{{ action('UsersController@edit', Auth::id()) }}'">
+                                {{ __('ユーザー設定') }}
+                            </button>
+                            @endif
+                        </div>
                     </div>
 
                     <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
