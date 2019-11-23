@@ -75,7 +75,7 @@
                     <input type="hidden" value="{{ $post->id }}" name="post_id">
                     <textarea class="form-control" id="message-text" name="content"></textarea>
                 </div>
-                <button type="submit" class="btn btn-primary btn-sm">Send comment</button>
+                <button type="submit" class="btn btn-primary btn-sm">コメントする</button>
             </form>
         </div>
     </div>

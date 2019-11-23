@@ -4,22 +4,24 @@
 <div class="container">
     <div class="row">
         <div class="col-md-8">
-            <div class="user-header mb-3">
-                <div class="user-header-item">
-                    <p>post</p>
-                    <p>{{ \App\Post::where('user_id', $user->id)->count() }}</p>
-                </div>
-                <div class="user-header-item">
-                    <p>follow</p>
-                    <p>{{ \App\Relationship::where('user_id', $user->id)->count() }}</p>
-                </div>
-                <div class="user-header-item">
-                    <p>follower</p>
-                    <p>{{ \App\Relationship::where('followed_user_id', $user->id)->count() }}</p>
-                </div>
-                <div class="user-header-item">
-                    <p>like</p>
-                    <p>{{ \App\Like::where('user_id', $user->id)->count() }}</p>
+            <div class="d-none d-md-block">
+                <div class="user-header mb-3 row">
+                    <div class="user-header-item col-sm-3">
+                        <p class="text">投稿数</p>
+                        <p class="count">{{ \App\Post::where('user_id', $user->id)->count() }}</p>
+                    </div>
+                    <div class="user-header-item col-sm-3">
+                        <p class="text">フォロー</p>
+                        <p class="count">{{ \App\Relationship::where('user_id', $user->id)->count() }}</p>
+                    </div>
+                    <div class="user-header-item col-sm-3">
+                        <p class="text">フォロワー</p>
+                        <p class="count">{{ \App\Relationship::where('followed_user_id', $user->id)->count() }}</p>
+                    </div>
+                    <div class="user-header-item col-sm-3">
+                        <p class="text">いいね！</p>
+                        <p class="count">{{ \App\Like::where('user_id', $user->id)->count() }}</p>
+                    </div>
                 </div>
             </div>
             @foreach($user->posts()->orderBy('created_at', 'desc')->get() as $post)
@@ -40,9 +42,22 @@
                     <div class="card-body">{{ $user->comment }}</div>
                     @if (Auth::id() === $user->id)
                     <div class="text-center mb-3">
-                        <button type="button" class="user-btn" data-toggle="modal" data-target="#exampleModal">
+                        <button type="button" class="user-btn mb-3" data-toggle="modal" data-target="#exampleModal">
                             プロフィール編集
                         </button>
+                        <div>
+
+                            @if (Auth::id() === 1)
+                            <button class="user-btn" onclick="location.href='{{ action('UsersController@edit', Auth::id()) }}'">
+                                {{ __('ユーザー設定') }}
+                            </button>
+                            <p>テストユーザーは設定出来ません</p>
+                            @else
+                            <button class="user-btn" onclick="location.href='{{ action('UsersController@edit', Auth::id()) }}'">
+                                {{ __('ユーザー設定') }}
+                            </button>
+                            @endif
+                        </div>
                     </div>
 
                     <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">

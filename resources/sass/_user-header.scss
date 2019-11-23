@@ -1,14 +1,20 @@
 .user-header {
     display: flex;
-    border: solid 1px #dfdfdf;
-    border-radius: 5px;
-    background: #fff;
+    @include border;
 
     .user-header-item {
         padding: 10px 20px;
 
         p {
             margin: 0;
+        }
+
+        .text {
+            font-size: 1rem;
+        }
+
+        .count {
+            font-size: 1.5rem;
         }
     }
 }

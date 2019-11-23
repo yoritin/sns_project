@@ -16994,16 +16994,6 @@ readers do not read off random characters that represent icons */
   font-family: "Font Awesome 5 Brands";
 }
 
-.navbar-color {
-  background: #3490DC;
-  color: white;
-}
-
-.navbar-color .navbar-brand,
-.navbar-color .nav-link {
-  color: white;
-}
-
 .error {
   color: tomato;
 }
@@ -17123,6 +17113,14 @@ readers do not read off random characters that represent icons */
 
 .user-header .user-header-item p {
   margin: 0;
+}
+
+.user-header .user-header-item .text {
+  font-size: 1rem;
+}
+
+.user-header .user-header-item .count {
+  font-size: 1.5rem;
 }
 
 .user-container {
