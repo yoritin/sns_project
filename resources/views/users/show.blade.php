@@ -4,22 +4,24 @@
 <div class="container">
     <div class="row">
         <div class="col-md-8">
-            <div class="user-header mb-3">
-                <div class="user-header-item">
-                    <p>投稿数</p>
-                    <p>{{ \App\Post::where('user_id', $user->id)->count() }}</p>
-                </div>
-                <div class="user-header-item">
-                    <p>フォロー</p>
-                    <p>{{ \App\Relationship::where('user_id', $user->id)->count() }}</p>
-                </div>
-                <div class="user-header-item">
-                    <p>フォロワー</p>
-                    <p>{{ \App\Relationship::where('followed_user_id', $user->id)->count() }}</p>
-                </div>
-                <div class="user-header-item">
-                    <p>いいね！</p>
-                    <p>{{ \App\Like::where('user_id', $user->id)->count() }}</p>
+            <div class="d-none d-md-block">
+                <div class="user-header mb-3 row">
+                    <div class="user-header-item col-sm-3">
+                        <p class="text">投稿数</p>
+                        <p class="count">{{ \App\Post::where('user_id', $user->id)->count() }}</p>
+                    </div>
+                    <div class="user-header-item col-sm-3">
+                        <p class="text">フォロー</p>
+                        <p class="count">{{ \App\Relationship::where('user_id', $user->id)->count() }}</p>
+                    </div>
+                    <div class="user-header-item col-sm-3">
+                        <p class="text">フォロワー</p>
+                        <p class="count">{{ \App\Relationship::where('followed_user_id', $user->id)->count() }}</p>
+                    </div>
+                    <div class="user-header-item col-sm-3">
+                        <p class="text">いいね！</p>
+                        <p class="count">{{ \App\Like::where('user_id', $user->id)->count() }}</p>
+                    </div>
                 </div>
             </div>
             @foreach($user->posts()->orderBy('created_at', 'desc')->get() as $post)

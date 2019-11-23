@@ -56,6 +56,9 @@
                                 <button type="submit" class="btn btn-primary">
                                     {{ __('ログイン') }}
                                 </button>
+                                <div>
+                                    <a href="{{ url('/register') }}">アカウントをお持ちでない方はこちら</a>
+                                </div>
                             </div>
                         </div>
                     </form>
@@ -69,9 +72,6 @@
                                 <button type="submit" class="btn btn-primary">
                                     {{ __('簡単ログイン') }}
                                 </button>
-                                <div>
-                                    <a href="{{ url('/register') }}">アカウントをお持ちでない方はこちら</a>
-                                </div>
                                 <p>※テストユーザーとしてログインできます。</p>
                                 
                             </div>

@@ -17115,6 +17115,14 @@ readers do not read off random characters that represent icons */
   margin: 0;
 }
 
+.user-header .user-header-item .text {
+  font-size: 1rem;
+}
+
+.user-header .user-header-item .count {
+  font-size: 1.5rem;
+}
+
 .user-container {
   margin: 0 auto;
 }
