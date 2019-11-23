@@ -54,7 +54,7 @@
                         <div class="form-group row mb-0">
                             <div class="col-md-8 offset-md-4">
                                 <button type="submit" class="btn btn-primary">
-                                    {{ __('Login') }}
+                                    {{ __('ログイン') }}
                                 </button>
 
                                 @if (Route::has('password.request'))
@@ -73,8 +73,9 @@
                         <div class="form-group row mb-0 mt-3">
                             <div class="col-md-8 offset-md-4">
                                 <button type="submit" class="btn btn-primary">
-                                    {{ __('簡単 Login') }}
+                                    {{ __('簡単ログイン') }}
                                 </button>
+                                <p>※テストユーザーとしてログインできます。</p>
                             </div>
                         </div>
                     </form>
