@@ -9,7 +9,7 @@
             @empty
             <div class="post mb-3">
                 <div class="user-icon">
-                    <img class="user-image" src="/storage/user_noimage.jpg" alt="noimage" width="40" height="40">
+                    <img class="user-image" src="https://sns-project.s3-ap-northeast-1.amazonaws.com/user-icon/user_noimage.jpg" alt="noimage" width="40" height="40">
                 </div>
                 <div class="post-content">
                     <div class="post-header">
