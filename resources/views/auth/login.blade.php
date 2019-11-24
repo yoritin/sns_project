@@ -9,7 +9,7 @@
                 
                 <div class="form-group row">
                     
-                    <div class="col-md-6 offset-md-4">
+                    <div class="col-md-6 offset-md-3">
                         <h2>{{ __('ログイン') }}</h2>
                         <label for="email" class="col-form-label text-md-right">{{ __('メールアドレス') }}</label>
                         <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email" autofocus>
@@ -30,7 +30,7 @@
                     </div>
                 </div>
                 <div class="form-group row">
-                    <div class="col-md-6 offset-md-4">
+                    <div class="col-md-6 offset-md-3">
                         <div class="form-check">
                             <input class="form-check-input" type="checkbox" name="remember" id="remember" {{ old('remember') ? 'checked' : '' }}>
 
@@ -42,7 +42,7 @@
                 </div>
 
                 <div class="form-group row mb-0">
-                    <div class="col-md-8 offset-md-4">
+                    <div class="col-md-8 offset-md-3">
                         <button type="submit" class="btn btn-primary">
                             {{ __('ログイン') }}
                         </button>
@@ -58,7 +58,7 @@
                 <input value="testuser" id="password" type="hidden" name="password">
                 <input type="hidden" name="remember" id="remember" {{ old('remember') ? 'checked' : '' }}>
                 <div class="form-group row mb-0 mt-3">
-                    <div class="col-md-8 offset-md-4">
+                    <div class="col-md-6 offset-md-3">
                         <button type="submit" class="btn btn-primary">
                             {{ __('簡単ログイン') }}
                         </button>

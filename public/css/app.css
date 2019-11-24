@@ -17099,6 +17099,12 @@ readers do not read off random characters that represent icons */
   display: none;
 }
 
+.form-border {
+  border: solid 1px #dfdfdf;
+  border-radius: 5px;
+  background: #fff;
+}
+
 .user-header {
   display: -webkit-box;
   display: flex;
