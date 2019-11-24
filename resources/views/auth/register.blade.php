@@ -7,7 +7,7 @@
             <form method="POST" action="{{ route('register') }}"  class="row">
                 @csrf
                 <div class="form-border col-md-6 offset-md-3">
-                    <p class="my-3 text-center">{{ __('新規登録') }}</p>
+                    <p class="my-3 form-title">{{ __('新規登録') }}</p>
                     <div class="form-group">
                         <label for="name" class="col-form-label text-md-right">{{ __('ユーザーネーム') }}</label>
                         <input id="name" type="text" class="form-control @error('name') is-invalid @enderror" name="name" value="{{ old('name') }}" required autocomplete="name" autofocus>
