@@ -36,6 +36,7 @@ class UsersController extends Controller
 
         $auth = Auth::id();
         $user->save();
+        \Session::flash('flash_message', 'ユーザー情報を更新しました');
         return view('users.show')->with('user', $user);
     }
 
@@ -55,6 +56,7 @@ class UsersController extends Controller
             $user->image_path = Storage::disk('s3')->url($path);
         }
         $user->save();
+        \Session::flash('flash_message', 'プロフィールを編集しました');
         return redirect()->back();
     }
 }
