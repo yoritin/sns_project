@@ -1,0 +1,8 @@
+.form-border {
+    @include border;
+}
+
+.form-title {
+    text-align: center;
+    font-size: 24px;
+}
