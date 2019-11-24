@@ -3,31 +3,6 @@
 @section('content')
 <div class="container">
     <div class="row">
-        <div class="col-md-8">
-            <div class="d-none d-md-block user-border mb-3">
-                <div class="user-header row">
-                    <div class="user-header-item col-sm-3">
-                        <p class="text">投稿数</p>
-                        <p class="count">{{ \App\Post::where('user_id', $user->id)->count() }}</p>
-                    </div>
-                    <div class="user-header-item col-sm-3">
-                        <p class="text">フォロー</p>
-                        <p class="count">{{ \App\Relationship::where('user_id', $user->id)->count() }}</p>
-                    </div>
-                    <div class="user-header-item col-sm-3">
-                        <p class="text">フォロワー</p>
-                        <p class="count">{{ \App\Relationship::where('followed_user_id', $user->id)->count() }}</p>
-                    </div>
-                    <div class="user-header-item col-sm-3">
-                        <p class="text">いいね！</p>
-                        <p class="count">{{ \App\Like::where('user_id', $user->id)->count() }}</p>
-                    </div>
-                </div>
-            </div>
-            @foreach($user->posts()->orderBy('created_at', 'desc')->get() as $post)
-            @include('layouts.post')
-            @endforeach
-        </div>
         <div class="col-md-4">
             <div class="card">
                 <div class="user-container">
@@ -123,6 +98,31 @@
                     </div>
                 </div>
             </div>
+        </div>
+        <div class="col-md-8">
+            <div class="d-none d-md-block user-border mb-3">
+                <div class="user-header row">
+                    <div class="user-header-item col-sm-3">
+                        <p class="text">投稿数</p>
+                        <p class="count">{{ \App\Post::where('user_id', $user->id)->count() }}</p>
+                    </div>
+                    <div class="user-header-item col-sm-3">
+                        <p class="text">フォロー</p>
+                        <p class="count">{{ \App\Relationship::where('user_id', $user->id)->count() }}</p>
+                    </div>
+                    <div class="user-header-item col-sm-3">
+                        <p class="text">フォロワー</p>
+                        <p class="count">{{ \App\Relationship::where('followed_user_id', $user->id)->count() }}</p>
+                    </div>
+                    <div class="user-header-item col-sm-3">
+                        <p class="text">いいね！</p>
+                        <p class="count">{{ \App\Like::where('user_id', $user->id)->count() }}</p>
+                    </div>
+                </div>
+            </div>
+            @foreach($user->posts()->orderBy('created_at', 'desc')->get() as $post)
+            @include('layouts.post')
+            @endforeach
         </div>
     </div>
 </div>
