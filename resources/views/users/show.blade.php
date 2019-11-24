@@ -33,7 +33,7 @@
                 <div class="user-container">
                     <div class="card-body">
                         @if($user->image_path === null)
-                        <img src="/storage/user_noimage.jpg" alt="user_noimage" width="277" height="277">
+                        <img src="https://sns-project.s3-ap-northeast-1.amazonaws.com/user-icon/user_noimage.jpg" alt="user_noimage" width="277" height="277">
                         @else
                         <img src="{{ $user->image_path }}" alt="user_noimage" width="277" height="277">
                         @endif

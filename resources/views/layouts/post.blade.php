@@ -1,7 +1,7 @@
 <div class="post mb-3">
     <div class="user-icon">
         @if($post->user->image_path === null)
-        <img class="user-image" src="/storage/user_noimage.jpg" alt="noimage" width="40" height="40">
+        <img class="user-image" src="https://sns-project.s3-ap-northeast-1.amazonaws.com/user-icon/user_noimage.jpg" alt="noimage" width="40" height="40">
         @else
         <img class="user-image" src="{{ $post->user->image_path }}" alt="noimage" width="40" height="40">
         @endif
