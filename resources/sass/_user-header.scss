@@ -1,9 +1,14 @@
+.user-border {
+    @include border;
+}
+
 .user-header {
     display: flex;
-    @include border;
+    margin: 0;
 
     .user-header-item {
         padding: 10px 20px;
+        text-align: center;
 
         p {
             margin: 0;

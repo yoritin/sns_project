@@ -4,8 +4,8 @@
 <div class="container">
     <div class="row">
         <div class="col-md-8">
-            <div class="d-none d-md-block">
-                <div class="user-header mb-3 row">
+            <div class="d-none d-md-block user-border mb-3">
+                <div class="user-header row">
                     <div class="user-header-item col-sm-3">
                         <p class="text">投稿数</p>
                         <p class="count">{{ \App\Post::where('user_id', $user->id)->count() }}</p>

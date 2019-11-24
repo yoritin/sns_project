@@ -60,7 +60,7 @@
                 <i class="far fa-comment comment-show" data-id="{{ $post->id }}"></i>
                 {{ App\Comment::where('post_id', $post->id)->count() }}
             </div>
-            <div class="footer-time">{{ $post->updated_at }}</div>
+            <div class="footer-time d-none d-md-block">{{ $post->updated_at }}</div>
         </div>
         <div class="post-footer-comment" data-id="{{ $post->id }}">
             @foreach($post->comments as $comment)
