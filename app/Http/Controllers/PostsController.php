@@ -37,6 +37,7 @@ class PostsController extends Controller
         $post->user_id = Auth::id();
         $post->content = $request->content;
         $post->save();
+        \Session::flash('flash_message', '投稿が完了しました');
         return redirect('/');
     }
 
