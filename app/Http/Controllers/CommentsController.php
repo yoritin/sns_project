@@ -17,6 +17,7 @@ class CommentsController extends Controller
         $comment->post_id = $request->post_id;
         $comment->content = $request->content;
         $comment->save();
+        \Session::flash('flash_message', 'コメントを投稿しました');
         return redirect()->back();
     }
 }

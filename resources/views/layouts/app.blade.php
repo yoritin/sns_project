@@ -24,6 +24,14 @@
         @include('layouts.navbar')
 
         <main class="py-4">
+            @if (session('flash_message'))
+                <div class="flash_message alert alert-info alert-dismissible fade show" role="alert">
+                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                    {{ session('flash_message') }}
+                </div>
+            @endif
             @yield('content')
         </main>
     </div>
