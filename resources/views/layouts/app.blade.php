@@ -16,13 +16,15 @@
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
 
+    <!-- favicon -->
+    <link rel="shortcut icon" href="{{ asset('images/favicon.ico') }}">
+
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 </head>
 <body>
     <div id="app">
         @include('layouts.navbar')
-
         <main class="py-4">
             @if (session('flash_message'))
                 <div class="flash_message alert alert-info alert-dismissible fade show" role="alert">
@@ -34,6 +36,17 @@
             @endif
             @yield('content')
         </main>
+        @guest
+        @else
+        <div class="row">
+            <button class="fixed-bottom add-post col-2" onclick="location.href='{{ url('/posts/create') }}'">
+                <i class="fas fa-plus-circle"></i>
+            </button>
+        </div>
+        <footer class="d-sm-none">
+            @include('layouts.footer')
+        </footer>
+        @endguest
     </div>
 </body>
 </html>
