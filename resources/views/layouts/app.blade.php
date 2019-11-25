@@ -36,9 +36,12 @@
             @endif
             @yield('content')
         </main>
+        @guest
+        @else
         <footer class="d-sm-none">
             @include('layouts.footer')
         </footer>
+        @endguest
     </div>
 </body>
 </html>
