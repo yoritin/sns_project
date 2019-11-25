@@ -38,6 +38,11 @@
         </main>
         @guest
         @else
+        <div class="row">
+            <button class="fixed-bottom add-post col-2" onclick="location.href='{{ url('/posts/create') }}'">
+                <i class="fas fa-plus-circle"></i>
+            </button>
+        </div>
         <footer class="d-sm-none">
             @include('layouts.footer')
         </footer>
