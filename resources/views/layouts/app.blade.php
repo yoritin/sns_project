@@ -25,7 +25,6 @@
 <body>
     <div id="app">
         @include('layouts.navbar')
-
         <main class="py-4">
             @if (session('flash_message'))
                 <div class="flash_message alert alert-info alert-dismissible fade show" role="alert">
@@ -37,6 +36,9 @@
             @endif
             @yield('content')
         </main>
+        <footer class="d-sm-none">
+            @include('layouts.footer')
+        </footer>
     </div>
 </body>
 </html>
