@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Storage;
+use Intervention\Image\Facades\Image;
 use App\User;
 
 class UsersController extends Controller
@@ -49,11 +50,16 @@ class UsersController extends Controller
 
         if($request->has('image')) {
             //s3アップロード開始
-            $image = $request->file('image');
+            $file = $request->file('image');
+            // ファイルネーム
+            $name = "user-icon/".Auth::id().".jpg";
+            // 画像のリサイズ
+            $image = Image::make($file)
+                ->fit(600, 600);
             // バケットの`user-icon`フォルダへアップロード
-            $path = Storage::disk('s3')->putFile('user-icon', $image, 'public');
+            $path = Storage::disk('s3')->put($name, (string) $image->encode(),'public');
             // アップロードした画像のフルパスを取得
-            $user->image_path = Storage::disk('s3')->url($path);
+            $user->image_path = "https://sns-project.s3-ap-northeast-1.amazonaws.com/"."$name";
         }
         $user->save();
         \Session::flash('flash_message', 'プロフィールを編集しました');
