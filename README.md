@@ -8,7 +8,9 @@ http://sns-project.yoriblog.com/
 ## 使用技術
 ### バックエンド
 言語：PHP
+
 フレームワーク：Laravel
+
 ### フロントエンド
 Bootstrap
 fontawesome
