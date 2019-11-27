@@ -16,15 +16,15 @@ class PostsController extends Controller
             $relationship = Relationship::where('user_id', Auth::id())->get()->toArray();
             // フォローしているユーザーのIDを配列で取得
             $follow = array_column($relationship, 'followed_user_id');
-            $posts = Post::whereIn('user_id', $follow)->orWhere('user_id', Auth::id())->latest()->get();
+            $posts = Post::whereIn('user_id', $follow)->orWhere('user_id', Auth::id())->latest()->paginate(15);
         } else {
-            $posts = Post::latest()->get();
+            $posts = Post::latest()->paginate(15);
         }
         return view('posts.index')->with('posts', $posts);
     }
 
     public function newInfo() {
-        $posts = Post::latest()->get();
+        $posts = Post::latest()->paginate(15);
         return view('posts.index')->with('posts', $posts);
     }
 
