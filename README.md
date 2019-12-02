@@ -1,5 +1,5 @@
 ## URL
-http://sns-project.yoriblog.com/
+ec2-52-68-4-7.ap-northeast-1.compute.amazonaws.com
 
 ## 機能
 - ログイン機能
