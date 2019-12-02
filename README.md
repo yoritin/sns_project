@@ -35,7 +35,7 @@ Bootstrap
 fontawesome
 sass
 ### 開発環境
-Laradock
+vscode Laradock
 ### インフラ
 AWS
 - EC2
