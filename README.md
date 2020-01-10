@@ -1,5 +1,5 @@
 ## URL
-http://ec2-52-68-4-7.ap-northeast-1.compute.amazonaws.com
+http://gr-pl.com
 
 ## 機能
 - ログイン機能
