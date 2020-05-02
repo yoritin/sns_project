@@ -1,5 +1,6 @@
 ## URL
-http://gr-pl.com　（現在停止中）
+http://gr-pl.com
+（現在停止中）
 
 ## 機能
 - ログイン機能
